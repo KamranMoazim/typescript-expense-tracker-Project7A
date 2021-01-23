@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Header, Balance, IncomeExpense, History, AddTransaction } from './Components/Index';
+// import "./Style.css";
+import "./App.css";
+import { TransactionProvider } from "./Context/TransactionContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TransactionProvider>
+      <div className="container1">
+        <Header />
+        <div>
+          <Balance />
+          <IncomeExpense />
+          <History />
+          <AddTransaction />
+        </div>
+      </div>
+    </TransactionProvider>
   );
 }
 
 export default App;
+
+
+
+
+// import Header  from './components/Header'
+// import Balance  from './components/Balance'
+// import IncomeExpence  from './components/IncomeExpence'
+// import TransactionList  from './components/TransactionList'
+// import AddTransaction  from './components/AddTransaction'
+
+// import Context from './context/Context'
+
+// import './App.css';
+
+// function App() {
+//   return (
+//     <Context>
+//       <div className="container1">
+//         <Header />
+//         <Balance />
+//         <IncomeExpence />
+//         <TransactionList />
+//         <AddTransaction />
+//         <Context />
+//         </div>
+//     </Context>
+//   );
+// }
+
+// export default App;
